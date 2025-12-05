@@ -1,0 +1,240 @@
+{
+    "info": {
+        "name": "Pets Management API",
+        "description": "Complete CRUD API for managing pets in an animal shelter",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Get All Pets",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:3000/pets",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000",
+                    "path": [
+                        "pets"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Get Single Pet",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:3000/pets/:id",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000",
+                    "path": [
+                        "pets",
+                        ":id"
+                    ],
+                    "variable": [
+                        {
+                            "key": "id",
+                            "value": "507f1f77bcf86cd799439011"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Create Pet",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    },
+                    {
+                        "key": "x-staff",
+                        "value": "true"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"name\": \"Buddy\",\n  \"species\": \"dog\",\n  \"age\": 5\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:3000/pets",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000",
+                    "path": [
+                        "pets"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Update Pet",
+            "request": {
+                "method": "PATCH",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    },
+                    {
+                        "key": "x-staff",
+                        "value": "true"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"age\": 6\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:3000/pets/:id",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000",
+                    "path": [
+                        "pets",
+                        ":id"
+                    ],
+                    "variable": [
+                        {
+                            "key": "id",
+                            "value": "507f1f77bcf86cd799439011"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Delete Pet",
+            "request": {
+                "method": "DELETE",
+                "header": [
+                    {
+                        "key": "x-staff",
+                        "value": "true"
+                    }
+                ],
+                "url": {
+                    "raw": "http://localhost:3000/pets/:id",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000",
+                    "path": [
+                        "pets",
+                        ":id"
+                    ],
+                    "variable": [
+                        {
+                            "key": "id",
+                            "value": "507f1f77bcf86cd799439011"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Create Pet - Missing Staff Header (Error)",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"name\": \"Max\",\n  \"species\": \"cat\",\n  \"age\": 3\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:3000/pets",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000",
+                    "path": [
+                        "pets"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Create Pet - Invalid Age (Error)",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    },
+                    {
+                        "key": "x-staff",
+                        "value": "true"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"name\": \"Charlie\",\n  \"species\": \"bird\",\n  \"age\": 35\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:3000/pets",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000",
+                    "path": [
+                        "pets"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Create Pet - Invalid Species (Error)",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    },
+                    {
+                        "key": "x-staff",
+                        "value": "true"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"name\": \"Fluffy\",\n  \"species\": \"hamster\",\n  \"age\": 2\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:3000/pets",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000",
+                    "path": [
+                        "pets"
+                    ]
+                }
+            }
+        }
+    ]
+}
