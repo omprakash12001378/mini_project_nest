@@ -7,8 +7,8 @@ services:
     restart: always
     ports:
       - '3306:3306'
-    environment: Prakash@1
-      MYSQL_ROOT_PASSWORD: 
+    environment: 
+      MYSQL_ROOT_PASSWORD: Prakash@1
       MYSQL_DATABASE: pets_shelter
       MYSQL_USER: root
       MYSQL_PASSWORD: prakash@1
